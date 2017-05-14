@@ -38,9 +38,9 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public void deleteCustomer(Long id) throws NoResultException {
         Customer foundCustomer = customerRepository.findOne(id);
-        if(foundCustomer == null){
+        if(foundCustomer == null)
             throw new NoResultException("Can't delete customer because doesn't exist.");
-        }
+
 
         customerRepository.delete(id);
 

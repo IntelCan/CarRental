@@ -7,12 +7,12 @@ import 'rxjs/add/operator/map';
  */
 
 @Injectable()
-export class CustomerService{
+export class CarService{
 
     constructor(private _http: Http) {}
 
-    getCustomers() {
-        return this._http.get('/api/customer/all')
+    getCars() {
+        return this._http.get('/api/car/all')
             .map((res:Response) => res.json());
     }
 

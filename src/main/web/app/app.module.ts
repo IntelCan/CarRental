@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
 import { HomeComponent } from './home/home.component';
 import { CustomerComponent } from "./customer/customer.component";
+import {CarComponent} from "./car/car.component";
 
 
 @NgModule({
     declarations: [AppComponent,
                    HelloComponent,
                    HomeComponent,
-                   CustomerComponent],
+                   CustomerComponent,
+                   CarComponent],
     imports: [BrowserModule,
               FormsModule,
               ReactiveFormsModule,
