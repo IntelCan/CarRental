@@ -33,6 +33,13 @@ public class CustomerController {
         return new ResponseEntity<>(customer, HttpStatus.OK);
     }
 
+    @RequestMapping(value="/ic/{identityCard}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Customer> loadCustomerByIdentityCard(@PathVariable("identityCard") String identityCard ){
+        Customer customer = customerService.loadCustomerByIdentityCard(identityCard);
+        return new ResponseEntity<>(customer,HttpStatus.OK);
+    }
+
+
     @RequestMapping(value ="/create", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Customer> createCustomer(@RequestBody Customer customer){
         Customer createdCustomer = customerService.createCustomer(customer);

@@ -10,7 +10,7 @@ import 'rxjs/add/operator/map';
  */
 
 @Injectable()
-export class RentCarService{
+export class RentedCarService{
 
     constructor(private _http: Http) {}
 

@@ -20,7 +20,8 @@ public class CarController {
     @Autowired
     private CarService carService;
 
-    @RequestMapping( value ="/all", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)    public ResponseEntity<List<Car>> getCars(){
+    @RequestMapping( value ="/all", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Car>> getCars(){
         List<Car> cars = carService.getAllCar();
         return new ResponseEntity<>(cars, HttpStatus.OK);
     }
@@ -35,6 +36,26 @@ public class CarController {
     public ResponseEntity<Car> createCar(@RequestBody Car car){
         Car createdCar = carService.createCar(car);
         return new ResponseEntity<>(createdCar, HttpStatus.CREATED);
+    }
+
+    @RequestMapping(value="/{id}",method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Car> updateCar(@RequestBody Car car){
+        Car updatedCar = carService.updateCar(car);
+        return new ResponseEntity<>(updatedCar,HttpStatus.OK);
+    }
+
+    @RequestMapping(value="/rent/{id}",method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Car> rentCar(@RequestBody Car car){
+        car.setIsRented(true);
+        Car updatedCar = carService.updateCar(car);
+        return new ResponseEntity<>(updatedCar,HttpStatus.OK);
+    }
+
+    @RequestMapping(value="/return/{id}",method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Car> returnCar(@RequestBody Car car){
+        car.setIsRented(false);
+        Car updatedCar = carService.updateCar(car);
+        return new ResponseEntity<>(updatedCar,HttpStatus.OK);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)

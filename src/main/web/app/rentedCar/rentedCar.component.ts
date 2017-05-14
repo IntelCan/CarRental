@@ -3,7 +3,7 @@
  */
 
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {RentCarService} from "./rentCar.service";
+import { RentedCarService} from "./rentedCar.service";
 
 
 interface MessageJson {
@@ -17,18 +17,18 @@ interface MessageJson {
 
 
 @Component({
-    selector: 'rentCar',
-    templateUrl: 'app/rentCar/rentCar.component.html',
+    selector: 'rentedCar',
+    templateUrl: 'app/rentedCar/rentedCar.component.html',
     styleUrls: ['css/home.css'],
-    providers: [RentCarService]
+    providers: [RentedCarService]
 })
-export class RentCarComponent implements OnInit,OnDestroy{
+export class RentedCarComponent implements OnInit,OnDestroy{
 
     private jsonResponse: string;
     private messages: Array<MessageJson>;
     private _subscription;
 
-    constructor(private _userService: RentCarService) {}
+    constructor(private _userService: RentedCarService) {}
 
     ngOnInit(){
         this._subscription = this._userService.getCars()

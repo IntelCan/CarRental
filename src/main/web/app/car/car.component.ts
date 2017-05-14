@@ -22,6 +22,7 @@ export class CarComponent implements OnInit,OnDestroy{
     private jsonResponse: string;
     private messages: Array<MessageJson>;
     private _subscription;
+    private dw: string;
 
     constructor(private _userService: CarService) {}
 

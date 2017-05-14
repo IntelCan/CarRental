@@ -1,28 +1,16 @@
 <div class="container-fluid">
+    <p>Dane samochodu który wybrałeś:</p>
+    <p>Marka: {{car.mark}}</p>
+    <p>Model: {{car.model}}</p>
+    <p>Cena za godzine: {{car.price}} zł</p>
+    <p></p>
+<p>Wpisz poniżej numer dowodu klienta aby wypożyczyć wybrany samochód:</p>
 
-    <h2>Samochody</h2>
-    <table class="table  table-striped table-condensed">
-        <thead class="thead-inverse">
-        <tr >
-            <th>Id</th>
-            <th>Marka</th>
-            <th>Model</th>
-            <th>Klasa</th>
-            <th> Cena (za 1h)</th>
-            <th> Status</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let message of messages">
-            <td>{{message.id}}</td>
-            <td>{{message.mark}}</td>
-            <td>{{message.model}}</td>
-            <td>{{message.rate}}</td>
-            <td>{{message.price}}</td>
-            <td *ngIf="!message.isRented"><a [routerLink]="['message.id']" class="btn btn-success" onclick=" console.log(choice2)">Wynajmij</a></td>
-            <td *ngIf="message.isRented">Wynajęty</td>
-        </tr>
-        </tbody>
-    </table>
+    Numer dowodu:  <textarea cols="15" rows="1" [(ngModel)] = "dw"></textarea>
+    <p></p>
+    Czas wypożyczenia [h]:  <textarea cols="15" rows="1"  [(ngModel)]="dataRentalToAdd.timeRent"></textarea>
+    <p></p>
+    <p><a [routerLink]="['']" class="btn btn-success" (click)="getCustomerByIC();">Potwierdź</a></p>
+
 </div>
 

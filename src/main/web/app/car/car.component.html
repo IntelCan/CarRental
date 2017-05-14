@@ -19,7 +19,7 @@
             <td>{{message.model}}</td>
             <td>{{message.rate}}</td>
             <td>{{message.price}}</td>
-            <td *ngIf="!message.isRented"><a [routerLink]="['message.id']" class="btn btn-success" onclick=" console.log(choice2)">Wynajmij</a></td>
+            <td *ngIf="!message.isRented"><a [routerLink]="['/rental', message.id ]" class="btn btn-success">Wynajmij</a></td>
             <td *ngIf="message.isRented">Wynajęty</td>
         </tr>
         </tbody>
