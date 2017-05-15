@@ -32,9 +32,7 @@ export class CarComponent implements OnInit,OnDestroy{
                 (data) => {
                     //this.jsonResponse = JSON.stringify(data);
                     this.messages = data;
-                },
-                (err) => console.log(err),
-                () => console.log('hello service test complete')
+                }
             );
 
     }

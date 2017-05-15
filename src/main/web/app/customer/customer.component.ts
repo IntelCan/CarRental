@@ -5,10 +5,7 @@ interface MessageJson {
     id: any;
     name: string;
     surname: string;
-    age: number;
     identityCard: string;
-    driverLicense: string;
-    phone: string;
 }
 
 
@@ -33,8 +30,6 @@ export class CustomerComponent implements OnInit,OnDestroy{
                     //this.jsonResponse = JSON.stringify(data);
                     this.messages = data;
                 },
-                (err) => console.log(err),
-                () => console.log('hello service test complete')
             );
 
     }

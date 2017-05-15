@@ -1,6 +1,7 @@
 package org.CarRental.service;
 
 import org.CarRental.model.Customer;
+import org.CarRental.model.CustomerDTO;
 import org.CarRental.repository.CustomerRepository;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.NoResultException;
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -31,9 +33,37 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    public List<CustomerDTO> getAllCustomerDTO() {
+        List<Customer> customers = customerRepository.findAll();
+        List<CustomerDTO> customerDTOS = new ArrayList<>();
+        for(Customer item: customers){
+            CustomerDTO customerDTO = new CustomerDTO(
+                    item.getId(),
+                    item.getName(),
+                    item.getSurname(),
+                    item.getIdentityCard()
+            );
+            customerDTOS.add(customerDTO);
+        }
+        return customerDTOS;
+    }
+
+    @Override
     public Customer getCustomerById(Long id) {
         Customer customer = customerRepository.findOne(id);
         return customer;
+    }
+
+    @Override
+    public CustomerDTO getCustomerDTOById(Long id) {
+        Customer customer = customerRepository.findOne(id);
+        CustomerDTO customerDTO = new CustomerDTO(
+                customer.getId(),
+                customer.getName(),
+                customer.getSurname(),
+                customer.getIdentityCard()
+        );
+        return customerDTO;
     }
 
     @Override
