@@ -19,6 +19,8 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public List<Car> getAllCar() {
+        Car car = new Car();
+        
         List<Car> cars = carRepository.findAll();
         return cars;
     }
@@ -36,10 +38,19 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
+    public Car updateCar(Car car) throws NoResultException {
+        Car foundCar = carRepository.findOne(car.getId());
+        if(foundCar == null)
+            throw new NoResultException("Can't update car because doesn't exist");
+        carRepository.save(car);
+        return car;
+    }
+
+    @Override
     public void deleteCar(Long id) throws NoResultException {
         Car foundCar = carRepository.findOne(id);
         if(foundCar == null)
-            throw new NoResultException("Can't delete customer because doesn't exist");
+            throw new NoResultException("Can't delete car because doesn't exist");
         carRepository.delete(id);
 
     }

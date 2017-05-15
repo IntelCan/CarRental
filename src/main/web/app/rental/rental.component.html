@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <p>Dane samochodu który wybrałeś:</p>
+    <p>Marka: {{car.mark}}</p>
+    <p>Model: {{car.model}}</p>
+    <p>Cena za godzine: {{car.price}} zł</p>
+    <p></p>
+<p>Wpisz poniżej numer dowodu klienta aby wypożyczyć wybrany samochód:</p>
+
+    Numer dowodu:  <textarea cols="15" rows="1" [(ngModel)] = "dw"></textarea>
+    <p></p>
+    Czas wypożyczenia [h]:  <textarea cols="15" rows="1"  [(ngModel)]="dataRentalToAdd.timeRent"></textarea>
+    <p></p>
+    <p><a [routerLink]="['']" class="btn btn-success" (click)="getCustomerByIC();">Potwierdź</a></p>
+
+</div>
+

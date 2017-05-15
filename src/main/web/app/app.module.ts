@@ -11,6 +11,8 @@ import { HelloComponent } from './hello/hello.component';
 import { HomeComponent } from './home/home.component';
 import { CustomerComponent } from "./customer/customer.component";
 import {CarComponent} from "./car/car.component";
+import {RentalComponent} from "./rental/rental.component";
+import {RentedCarComponent} from "./rentedCar/rentedCar.component";
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import {CarComponent} from "./car/car.component";
                    HelloComponent,
                    HomeComponent,
                    CustomerComponent,
-                   CarComponent],
+                   CarComponent,
+                   RentalComponent,
+                   RentedCarComponent],
     imports: [BrowserModule,
               FormsModule,
               ReactiveFormsModule,

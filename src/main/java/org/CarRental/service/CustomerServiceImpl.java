@@ -2,10 +2,13 @@ package org.CarRental.service;
 
 import org.CarRental.model.Customer;
 import org.CarRental.repository.CustomerRepository;
+import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.NoResultException;
+import javax.transaction.Transactional;
 import java.util.List;
 
 /**
@@ -14,8 +17,12 @@ import java.util.List;
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
+
     @Autowired
     private CustomerRepository customerRepository;
+
+    @Autowired
+    private SessionFactory sessionFactory;
 
     @Override
     public List<Customer> getAllCustomer() {
@@ -27,6 +34,15 @@ public class CustomerServiceImpl implements CustomerService {
     public Customer getCustomerById(Long id) {
         Customer customer = customerRepository.findOne(id);
         return customer;
+    }
+
+    @Override
+    @Transactional
+    public Customer loadCustomerByIdentityCard(String identityCard) {
+        return (Customer) sessionFactory.getCurrentSession()
+                .createCriteria(Customer.class)
+                .add(Restrictions.eq("identityCard", identityCard))
+                .uniqueResult();
     }
 
     @Override
