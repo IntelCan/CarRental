@@ -14,6 +14,7 @@ import {RentalComponent} from "./rental/rental.component";
 import {RentedCarComponent} from "./rentedCar/rentedCar.component";
 import {AddCarComponent} from "./addCar/addCar.component";
 import {AddCustomerComponent} from "./addCustomer/addCustomer.component";
+import {CustomerDetailsComponent} from "./customerDetails/customerDetails.component";
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {AddCustomerComponent} from "./addCustomer/addCustomer.component";
                    RentalComponent,
                    RentedCarComponent,
                    AddCarComponent,
-                   AddCustomerComponent],
+                   AddCustomerComponent,
+                   CustomerDetailsComponent],
     imports: [BrowserModule,
               FormsModule,
               ReactiveFormsModule,

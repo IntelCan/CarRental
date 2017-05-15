@@ -2,6 +2,7 @@ package org.CarRental.controller;
 
 import com.sun.org.apache.regexp.internal.RE;
 import org.CarRental.model.Customer;
+import org.CarRental.model.CustomerDTO;
 import org.CarRental.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -52,6 +53,16 @@ public class CustomerController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/dto/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<CustomerDTO> getCustomerDTOById(@PathVariable("id") Long id) {
+        CustomerDTO customerDTO = customerService.getCustomerDTOById(id);
+        return new ResponseEntity<>(customerDTO, HttpStatus.OK);
+    }
+    @RequestMapping( value ="/dto/all", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<CustomerDTO>> getCustomersDTO(){
+        List<CustomerDTO> customersDTO = customerService.getAllCustomerDTO();
+        return new ResponseEntity<>(customersDTO, HttpStatus.OK);
+    }
 
 
 

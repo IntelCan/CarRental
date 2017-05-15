@@ -12,7 +12,7 @@ export class CustomerService{
     constructor(private _http: Http) {}
 
     getCustomers() {
-        return this._http.get('/api/customer/all')
+        return this._http.get('/api/customer/dto/all')
             .map((res:Response) => res.json());
     }
 

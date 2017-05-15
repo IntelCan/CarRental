@@ -36,6 +36,13 @@ public class Customer {
     @Getter @Setter
     private String phone;
 
+    public Customer(){}
 
+    public Customer(CustomerDTO customerDTO){
+        this.id = customerDTO.getId();
+        this.name = customerDTO.getName();
+        this.surname = customerDTO.getSurname();
+        this.identityCard = customerDTO.getIdentityCard();
+    }
 
 }
