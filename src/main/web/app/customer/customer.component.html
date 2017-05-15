@@ -20,7 +20,7 @@
                 <td>{{message.name}}</td>
                 <td>{{message.surname}}</td>
                 <td>{{message.identityCard}}</td>
-                <td><a [routerLink]="['']" class="btn btn-success">Szczegóły</a></td>
+                <td><a [routerLink]="['/customerDetails', message.id ]" class="btn btn-success">Szczegóły</a></td>
             </tr>
             </tbody>
         </table>
