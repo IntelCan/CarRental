@@ -1,34 +1,35 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {AddCarService} from "./addCar.service";
+import {AddCustomerService} from "./addCustomer.service";
 import {Router} from "@angular/router";
 
 @Component({
-    selector: 'addCar',
-    templateUrl: 'app/addCar/addCar.component.html',
+    selector: 'addCustomer',
+    templateUrl: 'app/addCustomer/addCustomer.component.html',
     styleUrls: ['css/home.css'],
-    providers: [AddCarService]
+    providers: [AddCustomerService]
 })
-export class AddCarComponent implements OnInit,OnDestroy{
+export class AddCustomerComponent implements OnInit,OnDestroy{
 
     private _subscription;
 
-    private carToAdd = {
-        mark: '',
-        model:'',
-        rate: '',
-        price:'',
-        isRented:''
+    private customerToAdd = {
+        name: '',
+        surname: '',
+        age: '',
+        identityCard: '',
+        driverLicense: '',
+        phone: ''
     };
 
-    constructor(private _userService: AddCarService) {}
+    constructor(private _userService: AddCustomerService) {}
 
     ngOnInit(){
 
     }
 
-    createCar(data){
+    createCustomer(data){
         this.wyswietl(data)
-     this._userService.createCar(data)
+     this._userService.createCustomer(data)
             .subscribe(
                 result => {
 

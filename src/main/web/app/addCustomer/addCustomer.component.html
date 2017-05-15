@@ -1,10 +1,12 @@
 <div class="container-fluid">
 <p></p>
     <p>Wypełnij dane aby dodać nowego klienta</p>
-        <input name="carToAdd.mark" [(ngModel)]="carToAdd.mark" placeholder="Mark"><br/><br/>
-        <input name="carToAdd.model" [(ngModel)]="carToAdd.model" placeholder="Model"><br/><br/>
-        <input name="carToAdd.rate" [(ngModel)]="carToAdd.rate" placeholder="Rate"><br/><br/>
-        <input name="carToAdd.price" [(ngModel)]="carToAdd.price"  placeholder="Price"><br/><br/>
-        <button [routerLink]="['']" type="submit" (click)="createCar(carToAdd)">Dodaj</button>
+        <input name="customerToAdd.name" [(ngModel)]="customerToAdd.name" placeholder="Imię"><br/><br/>
+        <input name="customerToAdd.surname" [(ngModel)]="customerToAdd.surname" placeholder="Nazwisko"><br/><br/>
+        <input name="customerToAdd.age" [(ngModel)]="customerToAdd.age" placeholder="Wiek"><br/><br/>
+        <input name="customerToAdd.identityCard" [(ngModel)]="customerToAdd.identityCard"  placeholder="Nr. dowodu"><br/><br/>
+        <input name="customerToAdd.driverLicense" [(ngModel)]="customerToAdd.driverLicense" placeholder="Prawo Jazdy"><br/><br/>
+        <input name="customerToAdd.phone" [(ngModel)]="customerToAdd.phone" placeholder="Telefon"><br/><br/>
+        <button [routerLink]="['/customer']" type="submit" (click)="createCustomer(customerToAdd)">Dodaj</button>
 </div>
 

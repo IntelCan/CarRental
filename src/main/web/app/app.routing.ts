@@ -8,6 +8,7 @@ import {CarComponent} from "./car/car.component";
 import {RentalComponent} from "./rental/rental.component";
 import {RentedCarComponent} from "./rentedCar/rentedCar.component";
 import {AddCarComponent} from "./addCar/addCar.component";
+import {AddCustomerComponent} from "./addCustomer/addCustomer.component";
 
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
     {path: 'rental/:id', component: RentalComponent},
     {path: 'rentedCar', component: RentedCarComponent},
     {path: 'addCar', component: AddCarComponent},
+    {path: 'addCustomer', component: AddCustomerComponent},
 ];
 
 export const appRouterProviders: any[] = [];
