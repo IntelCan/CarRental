@@ -7,6 +7,7 @@ import { CustomerComponent } from './customer/customer.component'
 import {CarComponent} from "./car/car.component";
 import {RentalComponent} from "./rental/rental.component";
 import {RentedCarComponent} from "./rentedCar/rentedCar.component";
+import {AddCarComponent} from "./addCar/addCar.component";
 
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
@@ -15,6 +16,7 @@ const appRoutes: Routes = [
     {path: 'car', component: CarComponent},
     {path: 'rental/:id', component: RentalComponent},
     {path: 'rentedCar', component: RentedCarComponent},
+    {path: 'addCar', component: AddCarComponent},
 ];
 
 export const appRouterProviders: any[] = [];

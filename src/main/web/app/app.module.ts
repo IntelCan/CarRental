@@ -13,6 +13,7 @@ import { CustomerComponent } from "./customer/customer.component";
 import {CarComponent} from "./car/car.component";
 import {RentalComponent} from "./rental/rental.component";
 import {RentedCarComponent} from "./rentedCar/rentedCar.component";
+import {AddCarComponent} from "./addCar/addCar.component";
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {RentedCarComponent} from "./rentedCar/rentedCar.component";
                    CustomerComponent,
                    CarComponent,
                    RentalComponent,
-                   RentedCarComponent],
+                   RentedCarComponent,
+                   AddCarComponent],
     imports: [BrowserModule,
               FormsModule,
               ReactiveFormsModule,
