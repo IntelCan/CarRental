@@ -1,4 +1,5 @@
 [Projekt ze względu na małą ilość czasu zastopowany]
+
 Z mniejszych poprawek które przyszły mi teraz do głowy: 
 - należy dodać relacje między tabelami żeby w tabeli wypożyczalnia nie były tylko id
 - opakowanie backendu w wyjątki
