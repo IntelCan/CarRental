@@ -25,16 +25,16 @@ repositories {
 
 eclipse {
 	classpath {
-		 containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
-		 containers('org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8')
+		containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
+		containers('org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8')
 	}
 }
 
 idea {
-    module {
-        inheritOutputDirs = false
-        outputDir = file("${buildDir}/classes/main/")
-    }
+	module {
+		inheritOutputDirs = false
+		outputDir = file("${buildDir}/classes/main/")
+	}
 }
 
 jar {
@@ -60,7 +60,7 @@ dependencies {
 
 	// testing
 	testCompile('org.springframework.boot:spring-boot-starter-test')
-	
+
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 
 	compile group: 'org.projectlombok', name: 'lombok', version: '1.16.10'
@@ -99,12 +99,12 @@ gulp {
 
 // watch ts, sass, html files for changes and build
 task gulpWatch(type: GulpTask) {
-    args = ['watch']
+	args = ['watch']
 }
 
 // gradle wrapper
 task wrapper(type: Wrapper) {
-	gradleVersion = '3.2'
+	gradleVersion = '4.10.3'
 }
 
 // clean node/node_modules/typings
