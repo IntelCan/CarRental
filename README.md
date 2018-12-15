@@ -12,8 +12,11 @@ Aby uruchomić program potrzebne będzie:
    login: carr
    hasło: carr
    
-   oraz założyć schemat bazy danych o nazwie CarRental
+   oraz zakładamy schemat bazy danych o nazwie CarRental
    
+   LUB
+   
+   uruchamiamy dockera z postgresem i pgadminem przy użyciu docker-compose w folderze docker 
 2. Może być potrzebny także plugin do biblioteki lombok ponieważ może wystąpić błąd 
   przy kompilacji ( nie sprawdzałem ).
    
