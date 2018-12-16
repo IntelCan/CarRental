@@ -1,5 +1,6 @@
-package org.CarRental.Config;
+package org.CarRental.config;
 
+import org.CarRental.model.AppUser;
 import org.CarRental.model.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -14,14 +15,14 @@ import javax.sql.DataSource;
 @Configuration
 public class GeneralConfig {
     @Autowired
-    DataSource dataSource;
+    private DataSource dataSource;
 
     @Bean(name = "sessionFactory")
     public LocalSessionFactoryBean hibernate5SessionFactoryBean(){
         LocalSessionFactoryBean localSessionFactoryBean = new LocalSessionFactoryBean();
         localSessionFactoryBean.setDataSource(dataSource);
         localSessionFactoryBean.setAnnotatedClasses(
-                Customer.class
+                AppUser.class
         );
 
         return localSessionFactoryBean;

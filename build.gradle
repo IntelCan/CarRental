@@ -52,6 +52,8 @@ configurations {
 dependencies {
 	// spring
 	compile('org.springframework.boot:spring-boot-starter-web')
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '1.5.18.RELEASE'
+
 	// google gson
 	compile('com.google.code.gson:gson:2.7')
 
@@ -67,7 +69,7 @@ dependencies {
 
 	compile 'postgresql:postgresql:9.1-901-1.jdbc4'
 
-	// dependencies of security modules
+	// dependencies of securityUser modules
 	compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.6.0'
 	compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.40'
 

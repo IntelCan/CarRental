@@ -1,4 +1,4 @@
-package org.CarRental.service;
+package org.CarRental.service.rental;
 
 import org.CarRental.model.Rental;
 

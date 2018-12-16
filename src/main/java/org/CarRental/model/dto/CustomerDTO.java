@@ -1,4 +1,4 @@
-package org.CarRental.model;
+package org.CarRental.model.dto;
 
 import lombok.Getter;
 import lombok.Setter;

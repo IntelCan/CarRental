@@ -1,8 +1,9 @@
-package org.CarRental.service;
+package org.CarRental.service.customer;
 
 import org.CarRental.model.Customer;
-import org.CarRental.model.CustomerDTO;
+import org.CarRental.model.dto.CustomerDTO;
 import org.CarRental.repository.CustomerRepository;
+import org.CarRental.service.customer.CustomerService;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;

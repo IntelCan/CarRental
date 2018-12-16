@@ -1,12 +1,12 @@
-package org.CarRental.service;
+package org.CarRental.service.rental;
 
 import org.CarRental.model.Rental;
 import org.CarRental.repository.RentalRepository;
+import org.CarRental.service.rental.RentalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.NoResultException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 

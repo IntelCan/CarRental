@@ -1,7 +1,7 @@
 package org.CarRental.controller;
 
 import org.CarRental.model.Rental;
-import org.CarRental.service.RentalService;
+import org.CarRental.service.rental.RentalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

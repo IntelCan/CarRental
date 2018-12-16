@@ -1,9 +1,8 @@
 package org.CarRental.controller;
 
-import com.sun.org.apache.regexp.internal.RE;
 import org.CarRental.model.Customer;
-import org.CarRental.model.CustomerDTO;
-import org.CarRental.service.CustomerService;
+import org.CarRental.model.dto.CustomerDTO;
+import org.CarRental.service.customer.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

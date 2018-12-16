@@ -1,16 +1,15 @@
-import { Injectable, Inject } from '@angular/core';
-import { Http, Headers,Response } from '@angular/http';
+import {Injectable, Inject} from '@angular/core';
+import {Http, Headers, Response} from '@angular/http';
 import {Observable} from "rxjs/Observable";
 import 'rxjs/add/operator/map';
 import {carAdd} from "./car";
+import {TokenHeaders} from "../util/token/TokenHeaders";
 
 
 @Injectable()
-export class AddCarService{
+export class AddCarService {
 
-    private headers = new Headers({
-        'accept': 'application/json',
-        'content-type' : 'application/json'});
+    private headers = TokenHeaders.createHeadersWithToken();
 
     constructor(private _http: Http) {}
 
@@ -19,6 +18,7 @@ export class AddCarService{
             .map((res:Response) => res.json())
             .catch(this.handleError)
     }
+
     private handleError(error: any): Promise<any> {
         console.error('An error occurred in create car', error);
         return Promise.reject(error.message || error);
