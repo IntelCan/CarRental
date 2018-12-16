@@ -1,12 +1,11 @@
-/**
- * Created by intelcan on 14.05.17.
- */
+
 import { Injectable, Inject } from '@angular/core';
 import { Http, Headers,Response } from '@angular/http';
 import {Observable} from "rxjs/Observable";
 import {Rental} from "../rental/rental";
 import {Car} from "./car";
 import 'rxjs/add/operator/map';
+import {TokenHeaders} from "../util/token/TokenHeaders";
 
 /**
  * Created by intelcan on 14.05.17.
@@ -15,14 +14,13 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class RentedCarService{
 
-    private headers = new Headers({
-        'accept': 'application/json',
-        'content-type' : 'application/json'});
+    private headers = TokenHeaders.createHeadersWithToken();
+
 
     constructor(private _http: Http) {}
 
     getRentals() {
-        return this._http.get('/api/rental/all')
+        return this._http.get('/api/rental/all', {headers : this.headers})
             .map((res:Response) => res.json());
     }
 

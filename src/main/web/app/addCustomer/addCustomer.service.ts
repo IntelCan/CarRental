@@ -3,14 +3,13 @@ import { Http, Headers,Response } from '@angular/http';
 import {Observable} from "rxjs/Observable";
 import 'rxjs/add/operator/map';
 import {Customer} from "./customer";
+import {TokenHeaders} from "../util/token/TokenHeaders";
 
 
 @Injectable()
 export class AddCustomerService{
 
-    private headers = new Headers({
-        'accept': 'application/json',
-        'content-type' : 'application/json'});
+    private headers = TokenHeaders.createHeadersWithToken();
 
     constructor(private _http: Http) {}
 

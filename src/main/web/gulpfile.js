@@ -67,12 +67,23 @@ gulp.task('libcopy', function() {
         './node_modules/bootstrap/dist/css/bootstrap.css'])
         .pipe(gulp.dest(staticDir + 'css/lib'));
 
+    gulp.src([
+        './node_modules/angular2-toaster/bundles/angular2-toaster.umd.js'
+    ])
+        .pipe(gulp.dest(staticDir + 'js/lib/angular2-toaster/bundles'));
+
     // copy font-awesome
     gulp.src(['./node_modules/font-awesome/css/font-awesome.css'])
         .pipe(gulp.dest(staticDir + 'css/lib/font-awesome/css'));
     gulp.src(['./node_modules/font-awesome/fonts/*'])
         .pipe(gulp.dest(staticDir + 'css/lib/font-awesome/fonts'));
 });
+
+//copy angular2-toaster css
+gulp.src(['./node_modules/angular2-toaster/toaster.css'
+])
+    .pipe(gulp.dest(staticDir + 'css/lib'));
+
 
 // html/config copy
 gulp.task('htmlcopy', function() {

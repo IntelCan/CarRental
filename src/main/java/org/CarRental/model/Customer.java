@@ -1,39 +1,35 @@
 package org.CarRental.model;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import org.CarRental.model.dto.CustomerDTO;
 
 import javax.persistence.*;
 
 /**
  * Created by intelcan on 13.05.17.
  */
+@Data
 @Entity(name = "customer")
 public class Customer {
 
-    @Getter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Getter @Setter
     private String name;
 
-    @Getter @Setter
     private String surname;
 
-    @Getter @Setter
     private Short age;
 
-    @Getter @Setter
     @Column(name = "identity_card")
     private String identityCard;
 
-    @Getter @Setter
     @Column(name = "driver_license")
     private String driverLicense;
 
-    @Getter @Setter
     private String phone;
 
     public Customer(){}

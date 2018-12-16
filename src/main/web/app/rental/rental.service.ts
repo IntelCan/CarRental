@@ -3,6 +3,7 @@ import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Observable} from "rxjs/Observable";
 import {Rental} from "./rental";
+import {TokenHeaders} from "../util/token/TokenHeaders";
 /**
  * Created by intelcan on 14.05.17.
  */
@@ -14,18 +15,16 @@ export class RentalService{
 
     constructor(private _http: Http) {}
 
-    private headers = new Headers({
-        'accept': 'application/json',
-        'content-type' : 'application/json'});
+    private headers = TokenHeaders.createHeadersWithToken();
 
     getCar(id: number){
 
-        return this._http.get('/api/car/'+id)
+        return this._http.get('/api/car/'+id, {headers : this.headers})
             .map(res => res.json());
     }
 
     getCustomer(ic: string){
-        return this._http.get('/api/customer/ic/'+ic)
+        return this._http.get('/api/customer/ic/'+ic, {headers : this.headers})
             .map(res => res.json());
     }
     createRental(data): Observable<Rental>{

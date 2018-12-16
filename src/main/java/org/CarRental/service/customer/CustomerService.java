@@ -1,10 +1,9 @@
-package org.CarRental.service;
+package org.CarRental.service.customer;
 
 import org.CarRental.model.Customer;
-import org.CarRental.model.CustomerDTO;
+import org.CarRental.model.dto.CustomerDTO;
 
 import java.util.List;
-import java.util.SplittableRandom;
 
 /**
  * Created by intelcan on 13.05.17.

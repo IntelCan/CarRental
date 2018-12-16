@@ -93,7 +93,7 @@ export class RentalComponent implements OnInit,OnDestroy{
     }
 
     createRental(data): void{
-        this.wyswietl(this.dataRentalToAdd);
+        this.display(this.dataRentalToAdd);
         this._userService
             .createRental(data)
             .subscribe(newAccount => {
@@ -118,7 +118,7 @@ export class RentalComponent implements OnInit,OnDestroy{
     }
 
 
-    public wyswietl(data2){
+    public display(data2){
         this.dataRentalToAdd.idCar = this.id;
         console.log(data2);
     }

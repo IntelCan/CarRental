@@ -1,7 +1,8 @@
-package org.CarRental.service;
+package org.CarRental.service.car;
 
 import org.CarRental.model.Car;
 import org.CarRental.repository.CarRepository;
+import org.CarRental.service.car.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
