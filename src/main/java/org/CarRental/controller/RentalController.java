@@ -1,5 +1,6 @@
 package org.CarRental.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.CarRental.model.Rental;
 import org.CarRental.service.rental.RentalService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,11 +9,13 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
  * Created by intelcan on 14.05.17.
  */
+@Slf4j
 @RestController
 @RequestMapping("/api/rental")
 public class RentalController {
@@ -33,7 +36,8 @@ public class RentalController {
     }
 
     @RequestMapping(value ="/create", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Rental> createRental(@RequestBody Rental rental){
+    public ResponseEntity<Rental> createRental(@RequestBody @Valid Rental rental){
+        log.info("Renrtal: " + rental);
         Rental createdRental = rentalService.createRental(rental);
         return new ResponseEntity<>(createdRental, HttpStatus.CREATED);
     }
