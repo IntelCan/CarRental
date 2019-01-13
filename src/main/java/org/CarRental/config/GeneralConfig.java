@@ -22,6 +22,7 @@ public class GeneralConfig {
         LocalSessionFactoryBean localSessionFactoryBean = new LocalSessionFactoryBean();
         localSessionFactoryBean.setDataSource(dataSource);
         localSessionFactoryBean.setAnnotatedClasses(
+                Customer.class,
                 AppUser.class
         );
 
